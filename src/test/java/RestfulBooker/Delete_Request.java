@@ -1,3 +1,5 @@
+// This Class file says how to delete a booking from the Restful Booker API
+
 package RestfulBooker;
 
 import io.restassured.RestAssured;
