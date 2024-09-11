@@ -13,7 +13,7 @@ public class GetBooking {
         RequestSpecification requestSpecification = RestAssured.given();
         requestSpecification.baseUri("https://restful-booker.herokuapp.com/");
         requestSpecification.basePath("booking/{id}");
-        requestSpecification.pathParam("id",1);
+        requestSpecification.pathParam("id",100);
 
         // Hit the request and get the response
         Response response = requestSpecification.get();
@@ -37,7 +37,7 @@ public class GetBooking {
                 .given()
                     .baseUri("https://restful-booker.herokuapp.com/")
                     .basePath("booking/{id}")
-                    .pathParam("id",1)
+                    .pathParam("id",110)
                     .log()
                     .all()
                 .when()

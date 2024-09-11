@@ -42,30 +42,30 @@ public class CreateBooking {
         // Build the request
         RestAssured
                 .given()
-                .log()
-                .all()
-                .baseUri("https://restful-booker.herokuapp.com/")
-                .basePath("booking")
-                .body("{\n" +
-                        "    \"firstname\" : \"Vinod\",\n" +
-                        "    \"lastname\" : \"Gowda\",\n" +
-                        "    \"totalprice\" : 1123,\n" +
-                        "    \"depositpaid\" : false,\n" +
-                        "    \"bookingdates\" : {\n" +
-                        "        \"checkin\" : \"2024-01-01\",\n" +
-                        "        \"checkout\" : \"2024-01-01\"\n" +
-                        "    },\n" +
-                        "    \"additionalneeds\" : \"Lunch\"\n" +
-                        "}")
-                .contentType(ContentType.JSON)
+                    .log()
+                    .all()
+                    .baseUri("https://restful-booker.herokuapp.com/")
+                    .basePath("booking")
+                    .body("{\n" +
+                            "    \"firstname\" : \"Vinod\",\n" +
+                            "    \"lastname\" : \"Gowda\",\n" +
+                            "    \"totalprice\" : 1123,\n" +
+                            "    \"depositpaid\" : false,\n" +
+                            "    \"bookingdates\" : {\n" +
+                            "        \"checkin\" : \"2024-01-01\",\n" +
+                            "        \"checkout\" : \"2024-01-01\"\n" +
+                            "    },\n" +
+                            "    \"additionalneeds\" : \"Lunch\"\n" +
+                            "}")
+                    .contentType(ContentType.JSON)
                 // Hit the request and get the response
                 .when()
-                .post()
+                    .post()
                 .then()
                 // validate the response
-                .log()
-                .all()
-                .statusCode(200);
+                    .log()
+                    .all()
+                    .statusCode(200);
     }
 
 }
