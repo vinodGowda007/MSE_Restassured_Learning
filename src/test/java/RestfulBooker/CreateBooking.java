@@ -1,3 +1,5 @@
+// This Class file represent Create Bookings
+
 package RestfulBooker;
 
 import io.restassured.RestAssured;
