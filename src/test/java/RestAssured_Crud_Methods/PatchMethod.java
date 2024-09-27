@@ -1,39 +1,32 @@
-// This Class file says how to delete a booking from the Restful Booker API
-
-package RestfulBooker;
+package RestAssured_Crud_Methods;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
-public class Delete_Request {
+public class PatchMethod {
 
     public static void main(String[] args) {
-        // Build the request
 
         RestAssured
                 .given()
                     .log()
                     .all()
                     .baseUri("https://restful-booker.herokuapp.com/")
-                    .basePath("booking/{bookingId}")
-                    .pathParam("bookingId",1)
+                    .basePath("{basePath}/{id}")
+                    .pathParam("basePath","booking")
+                    .pathParam("id",1)
+                    .body("{\n" +
+                            "    \"firstname\" : \"Vinod\",\n" +
+                            "    \"lastname\" : \"Gowda\"\n" +
+                            "}")
+                    .contentType(ContentType.JSON)
                     .header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=")
                 .when()
-                    .delete()
+                    .patch()
                 .then()
                     .log()
                     .all()
                     .assertThat()
-                    .statusCode(201);
-
-
-
-
-
-        // Hit the Request / Send the request
-
-        // Validate the response
-
-
+                    .statusCode(200);
     }
 }

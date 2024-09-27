@@ -1,4 +1,4 @@
-package RestfulBooker;
+package RestAssured_Crud_Methods;
 
 import io.restassured.RestAssured;
 

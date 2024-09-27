@@ -1,6 +1,6 @@
 // This Class file represent Create Bookings
 
-package RestfulBooker;
+package RestAssured_Crud_Methods;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
